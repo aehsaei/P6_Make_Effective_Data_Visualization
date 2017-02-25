@@ -1,0 +1,99 @@
+body,div {
+    margin:0;
+    padding:0;
+}
+
+h1 {
+    font-family: 'Helvetica';
+    font-size: 3.0em;
+    margin: 0px;
+    margin-top: 50px;
+    padding:0;
+}
+
+path { 
+    stroke: #eaeaea;
+    stroke-width: 2;
+    fill: none;
+}
+
+.xAxis path,
+
+.xAxis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+            
+.xAxis text {
+    font-family: sans-serif;
+    font-size: 11px;
+}
+
+.yAxis path,
+
+.yAxis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+            
+.yAxis text {
+    font-family: sans-serif;
+    font-size: 11px;
+}
+
+.tick line{
+    opacity: 0.08;
+}
+
+.focus {
+  position: absolute;
+  text-align: center;
+  margin: 0px;
+  padding: 10px;
+  border: 0px;
+  font: 12px sans-serif;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+
+#content{
+    width: 890px;
+    margin: 0 auto;
+}
+
+#subheading{
+    padding-top: 10px;
+}
+
+#vis{
+    min-height:550px;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
+
+#buttons a{
+    font-family: 'Helvetica';
+    font-size: 12px;
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-right: 0px;
+    margin-left: 5px;
+    color: #000;
+    background: #d2d2d2;
+    cursor: pointer;
+}
+
+#footer{
+    font-size: 0.9em;
+    text-align: left;
+    margin-top: 10px;
+    border-top: 1px solid #eaeaea;
+    padding-bottom: 20px;
+    padding-top: 10px;
+}

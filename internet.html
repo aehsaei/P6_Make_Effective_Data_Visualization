@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="http://d3js.org/d3.v3.min.js"></script>
+        <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+        <link rel="stylesheet" type="text/css" href="./internet.css"/>
+        <script type="text/javascript" src="./internet.js"></script>
+    </head>
+    <body>
+
+        <div id="wrapper">
+            <div id="content">
+    
+                <h1>Internet Users</h1>
+                
+                <div id="subheading" style="display: block;"></div>
+
+                <div id="buttons">    
+                    <a id="W">World Average</a>
+                    <a id="U">United States</a>
+                    <a id="H">Highest Value</a>
+                </div>                
+    
+                <div id="vis"></div>
+    
+                <div id="footer">
+                    Internet users are individuals who have used the Internet 
+                    (via a computer, mobile phone, digital TV etc.) in the last 12 months. <br>
+                    Data Source:
+                    International Telecommunication Union 
+                    <a href="http://data.worldbank.org/">World Bank Open Data
+                    </a>
+                </div> 
+
+            </div> 
+        </div> 
+
+    <script type="text/javascript">
+
+        // Parse the date / time    
+        var parseDate = d3.time.format("%Y").parse;
+        
+        d3.csv("InternetUsersDataFixed.csv", function(d) {
+            d.Year = parseDate(d.Year);
+            d.Users = +d.Users;
+            return d;
+        }, draw);
+
+    </script>
+        
+    </body>
+</html>

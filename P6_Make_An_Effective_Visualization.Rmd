@@ -1,0 +1,122 @@
+---
+title: "Internet Users"
+author: "Andrew Ehsaei"
+date: "February 16, 2017"
+output: html_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r echo=FALSE, message=FALSE, warning=FALSE, packages}
+# Packages
+library(dplyr)
+library(ggplot2)
+library(knitr)
+library(reshape)
+library(reshape2)
+library(RColorBrewer)
+library(GGally)
+library(scales)
+library(memisc)
+library(tidyr)
+library(gridExtra)
+```
+## Abstract
+In this project I'll be creating an interactive data visualization using
+HTML, CSS, JavaScript, and D3. The dataset I am exploring contains the numbers of 
+Internet Users in each country over time.
+
+## Introduction
+First, I will download the dataset from the World Bank website
+( http://data.worldbank.org/indicator/IT.NET.USER.P2 ). I'll start to explore the 
+data using R and create some basic plots using ggplot to look for interesting 
+trends. The README.md will contain details on creating the visualization.
+
+## Import the Data
+
+```{r echo=TRUE, load_data}
+# Import the dataset into a dataframe variable
+mydata <- read.csv('/Users/aehsaei/Documents/Udacity/Project_6/InternetUsersData.csv', row.names=NULL)
+```
+
+## Tidy Data
+```{r echo=TRUE, tidy_the_data}
+# Drop the Indicator.Name column (not needed)
+mydata <- mydata[ , !(names(mydata) %in% c("Country.Code", "Indicator.Name"))]
+
+# Change the 'Year' columns to row values
+mydata <- melt(mydata, id=(c("Country.Name", "Indicator.Code")))
+
+# Add column names to these new aggregated columns
+colnames(mydata) <- c("Country.Name", "Indicator.Code", "Year", "Users")
+
+# Remove the leading 'X' in front of the years
+mydata["Year"] <- lapply(mydata["Year"], function(x) { gsub("X", "", x) })
+
+# Change all 'NA' values to 0 in the Users column
+mydata$Users[which(is.na(mydata$Users))] <- 0
+
+# Print the transformed dataframe
+str(mydata, strict.width = "cut", indent.str = "  " )
+```
+
+```{r echo=TRUE, explore_data}
+# Find internet history of USA
+subset(mydata, mydata$Country.Name == "United States" & mydata$Users > 0)
+
+# Find first year with non-zero internet user data
+subset(mydata, mydata$Users > 0)["Year"][1,]
+
+# Remove all data before first year with non-zero values
+mydata <- subset(mydata, mydata$Year >= 1990)
+
+# Find top 10 countries with highest 'Users' in 2015
+top_10_countries <- subset(mydata, mydata$Users > 0 & mydata$Year == 2015) %>%
+  arrange(desc(Users)) %>%
+  head(10)
+
+top_10_countries
+
+# Find lowest 10 countries with highest 'Users' in 2015
+bottom_10_countries <- subset(mydata, mydata$Users > 0 & mydata$Year == 2015) %>%
+  arrange(desc(Users)) %>%
+  tail(10)
+
+bottom_10_countries
+```
+
+```{r echo=TRUE, plot_data}
+
+# Plot top 10
+ggplot(data = subset(mydata, 
+                     mydata$Country.Name %in% top_10_countries$Country.Name), 
+       aes(x=Year, y=Users, group=Country.Name, colour=Country.Name)) +
+  geom_line() +
+  ggtitle("Countries With The Most Internet Users") +
+  labs(x="", y="Users (Per 100 People)") +
+  theme(text = element_text(size=12),
+        axis.text.x = element_text(angle=90, hjust=1))
+
+# Plot bottom 10
+ggplot(data = subset(mydata, 
+                     mydata$Country.Name %in% bottom_10_countries$Country.Name), 
+       aes(x=Year, y=Users, group=Country.Name, colour=Country.Name)) +
+  geom_line() +
+  ggtitle("Countries With The Least Internet Users") +
+  labs(x="", y="Users (Per 100 People)") +
+  theme(text = element_text(size=12),
+        axis.text.x = element_text(angle=90, hjust=1))
+
+# Plot all
+ggplot(data = mydata, aes(x=Year, y=Users, group=Country.Name)) +
+  geom_line() +
+  ggtitle("Internet Users (All Countries)") +
+  labs(x="", y="Users (Per 100 People)") +
+  theme(text = element_text(size=12),
+        axis.text.x = element_text(angle=90, hjust=1))
+```
+
+## Output Tidied Data
+```{r echo=TRUE, export_the_data}
+write.csv(file='/Users/aehsaei/Documents/Udacity/Project_6/InternetUsersDataFixed.csv', x=mydata)
+```
