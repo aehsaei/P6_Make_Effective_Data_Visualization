@@ -14,9 +14,21 @@ I then placed a few buttons for different regions: North America, Asia, Africa, 
 Feedback #3:
 I replaced the buttons at the top to focus on the United States and sought feedback on this version. The feedback received was that the user data needed to be displayed somewhere on the plot. I decided to add this information to the pop-up text box that would appear when scrolling over a particular line.  
 
+#Files
+Internet.js : (Submission) Javascript file containing D3 code <br>
+Internet.html : (Submission) HTML file <br>
+Internet.css : (Submission) CSS file <br>
+InternetUsersDataDimple.html : First chart using Dimple <br>
+DimpleGraph.png : Dimple chart <br>
+InternetUsersDataFixedSmall.csv : Fixed format small set for testing <br>
+InternetUsersDataFixed.csv : Fixed format set <br>
+InternetUsersData.csv : Full dataset downloaded from World Bank <br>
+P6_Make_An_Effective_Visualization.Rmd : R code + tidy data code <br>
+P6_Make_An_Effective_Visualization.html : HTML report for Rmd
+
 #Resources
-https://bl.ocks.org/d3noob
-http://learnjsdata.com/group_data.html
-http://jsfiddle.net/maniator/Bvmgm/6/
-https://apandre.files.wordpress.com/2011/02/chartchooserincolor.jpg
-http://www.nikhil-nathwani.com/projects/saviors/saviors.html
+https://bl.ocks.org/d3noob <br>
+http://learnjsdata.com/group_data.html <br>
+http://jsfiddle.net/maniator/Bvmgm/6/ <br>
+https://apandre.files.wordpress.com/2011/02/ chartchooserincolor.jpg <br>
+http://www.nikhil-nathwani.com/projects/saviors/saviors.html <br>
