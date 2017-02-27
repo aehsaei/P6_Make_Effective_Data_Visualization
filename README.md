@@ -16,6 +16,7 @@ I replaced the buttons at the top to focus on the United States and sought feedb
 
 #Project:
 https://jsfiddle.net/aehsaei/c91dzhn9/
+https://aehsaei.github.io/P6_Make_Effective_Data_Visualization/
 
 #Files
 Internet.js : (Submission) Javascript file containing D3 code <br>
