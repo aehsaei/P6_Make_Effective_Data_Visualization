@@ -15,7 +15,7 @@ Feedback #3:
 I replaced the buttons at the top to focus on the United States and sought feedback on this version. The feedback received was that the user data needed to be displayed somewhere on the plot. I decided to add this information to the pop-up text box that would appear when scrolling over a particular line.  
 
 #Project:
-https://jsfiddle.net/aehsaei/c91dzhn9/
+https://jsfiddle.net/aehsaei/c91dzhn9/ <br>
 https://aehsaei.github.io/P6_Make_Effective_Data_Visualization/
 
 #Files
