@@ -191,7 +191,7 @@ ggplot(data = subset(mydata,
         axis.text.x = element_text(angle=90, hjust=1))
 ```
 
-![](P6_Make_An_Effective_Visualization_files/figure-html/plot_data-1.png)<!-- -->
+![](https://raw.githubusercontent.com/aehsaei/P6_Make_Effective_Data_Visualization/master/P6_Make_An_Effective_Visualization_files/figure-html/plot_data-1.png)<!-- -->
 
 ```r
 # Plot bottom 10
@@ -205,7 +205,7 @@ ggplot(data = subset(mydata,
         axis.text.x = element_text(angle=90, hjust=1))
 ```
 
-![](https://raw.githubusercontent.com/aehsaei/P6_Make_Effective_Data_Visualization/master/plot_data-2.png)<!-- -->
+![](https://raw.githubusercontent.com/aehsaei/P6_Make_Effective_Data_Visualization/master/P6_Make_An_Effective_Visualization_files/figure-html/plot_data-2.png)<!-- -->
 
 ```r
 # Plot all
@@ -217,7 +217,7 @@ ggplot(data = mydata, aes(x=Year, y=Users, group=Country.Name)) +
         axis.text.x = element_text(angle=90, hjust=1))
 ```
 
-![](https://raw.githubusercontent.com/aehsaei/P6_Make_Effective_Data_Visualization/master/plot_data-3.png)<!-- -->
+![](https://raw.githubusercontent.com/aehsaei/P6_Make_Effective_Data_Visualization/master/P6_Make_An_Effective_Visualization_files/figure-html/plot_data-3.png)<!-- -->
 
 ## Output Tidied Data
 
