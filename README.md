@@ -3,8 +3,9 @@ Andrew Ehsaei
 February 16, 2017  
 
 ## Project
-[Internet Users Over Time Visualization] (https://aehsaei.github.io/P6_Make_Effective_Data_Visualization/) <br>
-[JSFiddle of Visualization] (https://jsfiddle.net/aehsaei/c91dzhn9/) 
+Visualization of Internet Users Over Time: https://aehsaei.github.io/P6_Make_Effective_Data_Visualization/
+
+JSFiddle of Visualization: https://jsfiddle.net/aehsaei/c91dzhn9/
 
 ## Abstract
 In this project I'll be creating an interactive data visualization using
