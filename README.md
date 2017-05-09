@@ -2,7 +2,7 @@
 Andrew Ehsaei  
 February 16, 2017  
 
-##Project: 
+## Project
 [Internet Users Over Time Visualization] (https://aehsaei.github.io/P6_Make_Effective_Data_Visualization/) <br>
 [JSFiddle of Visualization] (https://jsfiddle.net/aehsaei/c91dzhn9/) 
 
@@ -17,13 +17,13 @@ First, I will download the dataset from the World Bank website
 data using R and create some basic plots using ggplot to look for interesting 
 trends. The README.md will contain details on creating the visualization.
 
-##Summary
+## Summary
 In this visualization I wanted to show the overall trend in the amount of people using the internet across the world. I would also like to show that the United States, although much higher than the average, is not at the top of the list. There are many countries that have a higher percentage of people that use the internet over the United States. It is also interesting to see the leveling out of the curve for the United States, and the temporary decreases after around 2006.
 
-##Design
+## Design
 The data involves a time series, so I decided to plot the data using a line chart. There are many countries included in the dataset, each representing a separate line. In order to focus the reader, I added 3 buttons to narrow the focus to a few points of comparison. I wanted to compare the trend of the United States (the place where the internet started), to the world average and to the top of the list. I did this by adding buttons to highlight these particular lines in the chart and allow for an easy comparison. I also added the ability to mouse-over any line to get the country name and most recent user data as a popup. 
 
-##Feedback
+## Feedback
 Feedback #1:
 I first plotted all the data using dimple.js and the result was a large number of lines in many different colors. The feedback here was that the lines looked a bit overwhelming and it was hard to focus on any particular trend within the plot. I decided to initially plot each line in a neutral color, and have the ability to scroll over each line to highlight the line and associated country. 
 
@@ -33,7 +33,7 @@ I then placed a few buttons for different regions: North America, Asia, Africa, 
 Feedback #3:
 I replaced the buttons at the top to focus on the United States and sought feedback on this version. The feedback received was that the user data needed to be displayed somewhere on the plot. I decided to add this information to the pop-up text box that would appear when scrolling over a particular line.  
 
-#Files
+# Files
 Internet.js : (Submission) Javascript file containing D3 code <br>
 Internet.html : (Submission) HTML file <br>
 Internet.css : (Submission) CSS file <br>
